@@ -1,19 +1,22 @@
 const app = {};
 // Location results array is populated inside the location details, here we call it 
 app.locationResults = [];
+// console.log(app.locationResults);
 // We can design the restaurant results to work exactly like the location results
-app.restaurants = [];
+// app.restaurants = [];
 app.init = function () {
+    app.events();
     // app.getLodgingID();
-    app.getCampgroundID();
+    // app.getCampgroundID();
     // app.getRestaurantID();
+
 };
 
 $(function(){
     app.init();
 });
 
-const key = number => 
+
 // Setup landing page with button to initialize the app
 
     // build form1 - with options presented to the user with where they want to go on their trip
@@ -51,10 +54,56 @@ const key = number =>
 
 // Reveal options - 2 sets 
 
+app.events = function () {
+
+    // First Page -- choose a city
+    
+    $('#wasaga').on('click', function(e){
+        e.preventDefault();
+        const latLon = '44.523674, -80.015939';
+        app.getLodgingID(latLon);
+        app.getCampgroundID(latLon);
+        app.getRestaurantID(latLon);
+        // console.log(latLon);
+    });
+    $('#sauble').on('click', function(e){
+        e.preventDefault();
+        const latLon = '44.637599, -81.265622';
+        app.getLodgingID(latLon);
+        app.getCampgroundID(latLon);
+        app.getRestaurantID(latLon);
+        // console.log(latLon);
+    });
+    $('#tobermory').on('click', function(e){
+        e.preventDefault();
+        const latLon = '45.255908, -81.664490';
+        app.getLodgingID(latLon);
+        app.getCampgroundID(latLon);
+        app.getRestaurantID(latLon);
+        // console.log(latLon);
+    });
+    
+    // Second Page choose camping or hotel
+    
+
+    $('.sleepChoice').on('click', function(e){
+        e.preventDefault();
+        const choice = this.id;   
+        // console.log(this);
+        
+        if (choice === 'camping') {
+            console.log(choice);
+            app.locationDetails(campingID);
+        } else {
+            app.locationDetails(lodgingID);
+        }
+    });
+};
+
 app.displayResults = function () {
     // We have created a forEach loop to iterate through the location results array, populated in locationResults and defined globally above
     app.locationResults.forEach(function (location, index) {
-        console.log(location);
+        // console.log(location);
         
         // Here we defined these variables a second time to keep the code consistent because they are limited in scope to the functions they were defined in
         const locationName = location.name;
@@ -80,7 +129,7 @@ app.getLodgingID = function (location) {
             reqUrl: 'https://maps.googleapis.com/maps/api/place/textsearch/json',
             params: {
                 key: 'AIzaSyAjM2iAW0ZIFyotMj1JJV53Inq595q54kw',
-                location: '44.523674,-80.015939',
+                location: location,
                 type: 'lodging',
                 rating: 1
             },
@@ -93,10 +142,10 @@ app.getLodgingID = function (location) {
     }).then(function (res) {
         // Storing the results from our API requests into apiResults using key/value of type:lodging(apiResults.results[0].name/formatted_address/place_id)
         const lodgingResults = res;
-        const placeID = (lodgingResults.results[0].place_id);
-        app.locationDetails(placeID);
-        const placeID2 = (lodgingResults.results[1].place_id);
-        app.locationDetails(placeID2);
+        const lodgingID = (lodgingResults.results[0].place_id);
+        app.locationDetails(lodgingID);
+        const lodgingID2 = (lodgingResults.results[1].place_id);
+        app.locationDetails(lodgingID2);
     });
 };
 
@@ -110,7 +159,7 @@ app.getCampgroundID = function (location) {
             reqUrl: 'https://maps.googleapis.com/maps/api/place/textsearch/json',
             params: {
                 key: 'AIzaSyAjM2iAW0ZIFyotMj1JJV53Inq595q54kw',
-                location: '44.523674,-80.015939',
+                location: location,
                 type: 'campground',
                 rating: 4
             },
@@ -123,10 +172,10 @@ app.getCampgroundID = function (location) {
     }).then(function (res) {
         const campingResults = res;
         // console.log(campingResults);
-        
         // console.log(campingID);
         const campingID = (campingResults.results[0].place_id);
         app.locationDetails(campingID);
+        
         const campingID2 = (campingResults.results[1].place_id);
         app.locationDetails(campingID2);
     });
@@ -141,7 +190,7 @@ app.getRestaurantID = function (location) {
             reqUrl: 'https://maps.googleapis.com/maps/api/place/textsearch/json',
             params: {
                 key: 'AIzaSyAjM2iAW0ZIFyotMj1JJV53Inq595q54kw',
-                location: '44.523674,-80.015939',
+                location: location,
                 type: 'restaurant',
                 rating: 4
             },
@@ -154,10 +203,12 @@ app.getRestaurantID = function (location) {
     }).then(function (res) {
         const restaurantResults = res;
         // console.log(apiResults);
-
         const restaurantID = restaurantResults.results[0].place_id;
         // console.log(restaurantID);
         app.locationDetails(restaurantID);
+        const restaurantID2 = (restaurantResults.results[1].place_id);
+        app.locationDetails(restaurantID2);
+        // console.log(restaurantID2);
     });
 };
 
@@ -180,8 +231,8 @@ app.locationDetails = function (placeid) {
             useCache: false
         }
     }).then(function (res) {
-        // const apiResults = res;
-        console.log(res);
+        const apiResults = res;
+        // console.log(res);
         app.locationResults.push(res.result);
 
         // console.log(campingName);
@@ -193,6 +244,6 @@ app.locationDetails = function (placeid) {
         // console.log(campingPhone);
 
         app.displayResults();
-
+        // console.log(displayResults);
     });
 }
