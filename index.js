@@ -9,7 +9,6 @@ app.init = function () {
     // app.getLodgingID();
     // app.getCampgroundID();
     // app.getRestaurantID();
-
 };
 
 $(function(){
@@ -92,10 +91,10 @@ app.events = function () {
         // console.log(this);
         
         if (choice === 'camping') {
-            console.log(choice);
-            app.locationDetails(campingID);
+            // console.log(choice);
+            // app.locationDetails(campingID);
         } else {
-            app.locationDetails(lodgingID);
+            // app.locationDetails(lodgingID);
         }
     });
 };

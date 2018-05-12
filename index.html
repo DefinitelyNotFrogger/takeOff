@@ -12,8 +12,9 @@
         <!-- City Choice -->
         <section class="page page1">
             <div class="container">
-                <form action="">
-                    <h2>Where do you want to take off to this weekend?</h2>
+                <h1>Take Off</h1>
+                <h2>Where will your adventure take you this weekend?</h2>
+                <form class="cityForm" action="">
                     <button id="wasaga">
                         <p >Wasaga Beach</p>
                     </button>
@@ -30,8 +31,10 @@
         <section class="page page2">
             <div class="container">
                 <h2>Camping or Comfort</h2>
-                <button class = 'sleepChoice' id="camping">Camping</button>
-                <button class = 'sleepChoice' id="hotel">Hotel</button>
+                <div class="choiceContainer">
+                    <button class = 'sleepChoice' id="camping"><p>Camping</p></button>
+                    <button class = 'sleepChoice' id="hotel"><p>Hotel</p></button>
+                </div>
             </div>
            </section>
         <!-- Suggestions from API - depending on camping/lodging choice as well as a restaurant-->

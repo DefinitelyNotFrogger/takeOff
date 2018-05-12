@@ -26,6 +26,70 @@ section {
 }
 
 .page {
-    width: 80%;
+    width: 90%;
     border: 1px solid white;
 }
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+.cityForm {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+}
+
+h1 {
+    color: #B5936C;
+    text-shadow:2px 2px whitesmoke;
+}
+
+button, .sleepChoice {
+    background-color: rgba(240,237,238, 0.25);
+    border: 2px solid gray;
+    padding: 0 10px;
+    margin: 0;
+    width: 30%;
+}
+
+h2 {
+    color: #63B4D1;
+    text-shadow: 1px 1px #FOEDEE;
+}
+
+p {
+    color: whitesmoke;
+    text-shadow: 1px 1px #181f35;
+    font-size: 1.6rem;
+}
+
+.page2 {
+    
+    .choiceContainer {
+    widows: 90%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+        h2 {
+            border-bottom: 2px dashed lightcoral;
+        }
+        
+        button {
+            width: 80%;
+            display: block;
+        }
+        
+        p {
+            
+        }
+    }
+}
+
