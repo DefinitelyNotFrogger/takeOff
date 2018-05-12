@@ -117,8 +117,7 @@ app.events = function () {
     $('.sleepChoice').on('click', function(e){
         e.preventDefault();
         const choice = this.id;   
-        // console.log(this);
-        
+        // console.log(this);        
         if (choice === 'camping') {
             // console.log(choice);
             // app.locationDetails(campingID);
