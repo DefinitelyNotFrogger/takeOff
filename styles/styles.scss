@@ -25,9 +25,10 @@ section {
     height: 60vh;
 }
 
+
 .page {
     width: 90%;
-    border: 1px solid white;
+    
 }
 
 .container {
@@ -37,6 +38,11 @@ section {
     align-items: center;
     width: 100%;
     padding-bottom: 25px;
+    border: 1px solid white;
+}
+
+.page:not(.page1) {
+    display: none;
 }
 
 .cityForm {
@@ -61,7 +67,7 @@ button, .sleepChoice {
 
 h2 {
     color: #63B4D1;
-    text-shadow: 1px 1px #FOEDEE;
+    text-shadow: 1px 1px white;
 }
 
 p {
@@ -73,11 +79,11 @@ p {
 .page2 {
     
     .choiceContainer {
-    widows: 90%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-content: center;
+        widows: 90%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-content: center;
         h2 {
             border-bottom: 2px dashed lightcoral;
         }
@@ -87,9 +93,9 @@ p {
             display: block;
         }
         
-        p {
+        // p {
             
+            // }
         }
     }
-}
-
+    

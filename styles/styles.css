@@ -173,8 +173,7 @@ section {
   height: 60vh; }
 
 .page {
-  width: 90%;
-  border: 1px solid white; }
+  width: 90%; }
 
 .container {
   display: -webkit-box;
@@ -191,7 +190,11 @@ section {
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  padding-bottom: 25px; }
+  padding-bottom: 25px;
+  border: 1px solid white; }
+
+.page:not(.page1) {
+  display: none; }
 
 .cityForm {
   display: -webkit-box;
@@ -220,7 +223,7 @@ button, .sleepChoice {
 
 h2 {
   color: #63B4D1;
-  text-shadow: 1px 1px #FOEDEE; }
+  text-shadow: 1px 1px white; }
 
 p {
   color: whitesmoke;

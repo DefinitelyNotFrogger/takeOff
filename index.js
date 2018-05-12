@@ -1,10 +1,22 @@
 const app = {};
-// Location results array is populated inside the location details, here we call it 
+// Location results array is populated inside the location details, here we call it
+
+let lodgingID = null;
+let lodgingID2 = null;
+let campingID = null;
+let campingID2 = null;
+let restaurantID = null;
+let restaurantID2 = null;
+
+
+
 app.locationResults = [];
+console.log(app.locationResults);
 // console.log(app.locationResults);
 // We can design the restaurant results to work exactly like the location results
 // app.restaurants = [];
 app.init = function () {
+    
     app.events();
     // app.getLodgingID();
     // app.getCampgroundID();
@@ -13,6 +25,7 @@ app.init = function () {
 
 $(function(){
     app.init();
+    // $('#title').hide();
 });
 
 
@@ -64,6 +77,11 @@ app.events = function () {
         app.getCampgroundID(latLon);
         app.getRestaurantID(latLon);
         // console.log(latLon);
+        $('.page1').fadeOut('slow', function (){
+            $('.page2').fadeIn('slow', function (){
+
+            });
+        });
     });
     $('#sauble').on('click', function(e){
         e.preventDefault();
@@ -71,7 +89,13 @@ app.events = function () {
         app.getLodgingID(latLon);
         app.getCampgroundID(latLon);
         app.getRestaurantID(latLon);
+        $('.page1').fadeOut('slow', function () {
+            $('.page2').fadeIn('slow', function () {
+
+            });
+        });
         // console.log(latLon);
+
     });
     $('#tobermory').on('click', function(e){
         e.preventDefault();
@@ -79,6 +103,11 @@ app.events = function () {
         app.getLodgingID(latLon);
         app.getCampgroundID(latLon);
         app.getRestaurantID(latLon);
+        $('.page1').fadeOut('slow', function () {
+            $('.page2').fadeIn('slow', function () {
+
+            });
+        });
         // console.log(latLon);
     });
     
@@ -93,9 +122,23 @@ app.events = function () {
         if (choice === 'camping') {
             // console.log(choice);
             // app.locationDetails(campingID);
-        } else {
-            // app.locationDetails(lodgingID);
+            app.locationDetails(campingID);
+            app.locationDetails(campingID2);
+            app.locationDetails(restaurantID);
+            app.locationDetails(restaurantID2);
+            console.log(campingID, campingID2, restaurantID, restaurantID2);
+        } else {    
+            app.locationDetails(lodgingID);
+            app.locationDetails(lodgingID2);
+            app.locationDetails(restaurantID);
+            app.locationDetails(restaurantID2);
+            console.log(lodgingID, lodgingID2, restaurantID, restaurantID2);
         }
+        $('.page2').fadeOut('slow', function () {
+            $('.page3').fadeIn('slow', function () {
+
+            });
+        });
     });
 };
 
@@ -141,10 +184,8 @@ app.getLodgingID = function (location) {
     }).then(function (res) {
         // Storing the results from our API requests into apiResults using key/value of type:lodging(apiResults.results[0].name/formatted_address/place_id)
         const lodgingResults = res;
-        const lodgingID = (lodgingResults.results[0].place_id);
-        app.locationDetails(lodgingID);
-        const lodgingID2 = (lodgingResults.results[1].place_id);
-        app.locationDetails(lodgingID2);
+        lodgingID = (lodgingResults.results[0].place_id);
+        lodgingID2 = (lodgingResults.results[1].place_id);
     });
 };
 
@@ -172,11 +213,10 @@ app.getCampgroundID = function (location) {
         const campingResults = res;
         // console.log(campingResults);
         // console.log(campingID);
-        const campingID = (campingResults.results[0].place_id);
-        app.locationDetails(campingID);
+        campingID = (campingResults.results[0].place_id);
+
         
-        const campingID2 = (campingResults.results[1].place_id);
-        app.locationDetails(campingID2);
+        campingID2 = (campingResults.results[1].place_id);
     });
 };
 
@@ -202,12 +242,8 @@ app.getRestaurantID = function (location) {
     }).then(function (res) {
         const restaurantResults = res;
         // console.log(apiResults);
-        const restaurantID = restaurantResults.results[0].place_id;
-        // console.log(restaurantID);
-        app.locationDetails(restaurantID);
-        const restaurantID2 = (restaurantResults.results[1].place_id);
-        app.locationDetails(restaurantID2);
-        // console.log(restaurantID2);
+        restaurantID = restaurantResults.results[0].place_id;
+        restaurantID2 = (restaurantResults.results[1].place_id);
     });
 };
 
@@ -230,19 +266,12 @@ app.locationDetails = function (placeid) {
             useCache: false
         }
     }).then(function (res) {
-        const apiResults = res;
+        // const apiResults = res;
         // console.log(res);
         app.locationResults.push(res.result);
 
-        // console.log(campingName);
-        // const campingAddress = res.result.formatted_address;
-        // console.log(campingAddress);
-        // const campingWebsite = res.result.website;
-        // console.log(campingWebsite);
-        // const campingPhone = res.result.international_phone_number;
-        // console.log(campingPhone);
-
         app.displayResults();
-        // console.log(displayResults);
+        console.log(displayResults);
+
     });
 }
