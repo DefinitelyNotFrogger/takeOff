@@ -134,7 +134,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 main {
   background-image: url(../images/aaron-burden-133359-adirondakchairs.jpg);
-  background-position: center;
+  background-position: cover;
+  background-position-y: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -158,22 +159,17 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -ms-flex-line-pack: center;
   align-content: center;
-  height: 60vh; }
-
-.page {
-  width: 90%; }
+  height: 60vh;
+  color: rgba(0, 0, 0, 0.4); }
 
 .container {
   display: -webkit-box;
@@ -189,7 +185,6 @@ section {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 100%;
   padding-bottom: 25px;
   border: 1px solid white; }
 
@@ -225,10 +220,9 @@ h2 {
   color: #63B4D1;
   text-shadow: 1px 1px white; }
 
-p {
+p, a {
   color: whitesmoke;
-  text-shadow: 1px 1px #181f35;
-  font-size: 1.6rem; }
+  text-shadow: 1px 1px #181f35; }
 
 .page2 .choiceContainer {
   widows: 90%;
@@ -249,3 +243,31 @@ p {
   .page2 .choiceContainer button {
     width: 80%;
     display: block; }
+
+.page3 {
+  -webkit-box-flex: row;
+  -ms-flex: row wrap;
+  flex: row wrap; }
+  .page3 .suggestions {
+    padding: 25px;
+    width: calc(25% - 25px);
+    background: rgba(255, 255, 255, 0.25);
+    -ms-flex-preferred-size: 350px;
+    flex-basis: 350px; }
+    .page3 .suggestions h2 {
+      color: whitesmoke;
+      text-shadow: 1px 1px #181f35; }
+    .page3 .suggestions p, .page3 .suggestions h2, .page3 .suggestions a {
+      text-align: center;
+      width: 80%;
+      color: black; }
+    .page3 .suggestions a {
+      text-decoration: none; }
+
+.suggestions:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color: black;
+  text-shadow: 1px 1px darkblue; }
+  .suggestions:hover h2, .suggestions:hover p, .suggestions:hover a {
+    color: black;
+    text-shadow: whitesmoke; }

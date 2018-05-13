@@ -8,15 +8,12 @@ let campingID2 = null;
 let restaurantID = null;
 let restaurantID2 = null;
 
-
-
 app.locationResults = [];
 console.log(app.locationResults);
 // console.log(app.locationResults);
 // We can design the restaurant results to work exactly like the location results
 // app.restaurants = [];
 app.init = function () {
-    
     app.events();
     // app.getLodgingID();
     // app.getCampgroundID();
@@ -27,7 +24,6 @@ $(function(){
     app.init();
     // $('#title').hide();
 });
-
 
 // Setup landing page with button to initialize the app
 
@@ -41,7 +37,6 @@ $(function(){
 
 // Take user inputs and contact the API to request data for accomodation request and restaurants
 
-
     // First API Request - places - textsearch
         // Grab name and place_id and store to variable
 
@@ -51,25 +46,17 @@ $(function(){
     // Second API Request - places - place/details
         // Take place id to get information we want to display
         // Grab phone, address, website
-    
 
 // Display the top two results provided by the API to the user
                 // Cannot search by rating or price level within the API
     // Create a sorting function to loop through array and order by rating
     // The user then selects their choice
-
-
 // Then provide a map to the user for their destination 
     // if possible display directions
-
-
-
 // Reveal options - 2 sets 
 
 app.events = function () {
-
     // First Page -- choose a city
-    
     $('#wasaga').on('click', function(e){
         e.preventDefault();
         const latLon = '44.523674, -80.015939';
@@ -77,10 +64,11 @@ app.events = function () {
         app.getCampgroundID(latLon);
         app.getRestaurantID(latLon);
         // console.log(latLon);
+        $('main').css("background-image", "url(./images/wasaga.jpg)")
         $('.page1').fadeOut('slow', function (){
             $('.page2').fadeIn('slow', function (){
-
             });
+
         });
     });
     $('#sauble').on('click', function(e){
@@ -89,13 +77,12 @@ app.events = function () {
         app.getLodgingID(latLon);
         app.getCampgroundID(latLon);
         app.getRestaurantID(latLon);
+        $('main').css("background-image", "url(./images/sauble.jpg)")
         $('.page1').fadeOut('slow', function () {
             $('.page2').fadeIn('slow', function () {
-
             });
         });
         // console.log(latLon);
-
     });
     $('#tobermory').on('click', function(e){
         e.preventDefault();
@@ -103,6 +90,7 @@ app.events = function () {
         app.getLodgingID(latLon);
         app.getCampgroundID(latLon);
         app.getRestaurantID(latLon);
+        $('main').css("background-image", "url(./images/tobermory.jpg)")
         $('.page1').fadeOut('slow', function () {
             $('.page2').fadeIn('slow', function () {
 
@@ -110,10 +98,7 @@ app.events = function () {
         });
         // console.log(latLon);
     });
-    
     // Second Page choose camping or hotel
-    
-
     $('.sleepChoice').on('click', function(e){
         e.preventDefault();
         const choice = this.id;   
@@ -144,8 +129,7 @@ app.events = function () {
 app.displayResults = function () {
     // We have created a forEach loop to iterate through the location results array, populated in locationResults and defined globally above
     app.locationResults.forEach(function (location, index) {
-        // console.log(location);
-        
+        // console.log(location);     
         // Here we defined these variables a second time to keep the code consistent because they are limited in scope to the functions they were defined in
         const locationName = location.name;
         const locationAddress = location.formatted_address;
@@ -213,8 +197,6 @@ app.getCampgroundID = function (location) {
         // console.log(campingResults);
         // console.log(campingID);
         campingID = (campingResults.results[0].place_id);
-
-        
         campingID2 = (campingResults.results[1].place_id);
     });
 };
