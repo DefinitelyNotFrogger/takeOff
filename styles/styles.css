@@ -459,6 +459,13 @@ MEDIA QUERIES - MOBILE LAYOUT UPDATES
     .page3 div.suggestionContainer div.container.suggestions a {
       font-size: 2.4vw; } }
 
+@media (max-width: 470px) {
+  section#page2 h1 {
+    font-size: 7rem; }
+  section#page2 h2 {
+    font-size: 2.25rem;
+    line-height: 2.7rem; } }
+
 @media (max-width: 400px) {
   .page1 div.container,
   .page2 div.container {
