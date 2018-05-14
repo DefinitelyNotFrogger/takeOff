@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Bungee+Shade|Carter+One|Fredericka+the+Great|Lalezar|Lobster|Lobster+Two|Vast+Shadow"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900i|Nunito+Sans" rel="stylesheet">
     <title>Take Off</title>
 </head>
 <body>
     <main>
         <!-- City Choice -->
         <section class="page page1">
+            <h1 id="title">Take Off</h1>
             <div class="container">
-                <h1 id="title">Take Off</h1>
-                <h2>Where will your adventure take you this weekend?</h2>
+                <h2>Where will your adventure take you this time?</h2>
                 <div class="cityForm">
                     <button id="wasaga">
                         Wasaga Beach
@@ -31,46 +30,50 @@
         </section>
         <!-- Camping or Lodging -->
         <section class="page page2" id="page2">
+            <h1 id="title">Take Off</h1>
             <div class="container">
-                <h2>Camping or Comfort</h2>
+                <h2>What's more important this weekend, having fun in nature, or lounging in comfort?</h2>
                 <div class="choiceContainer">
-                    <button class = 'sleepChoice' id="camping">Camping</button>
-                    <button class = 'sleepChoice' id="hotel">Hotel</button>
+                    <button class = 'sleepChoice' id="camping">Go Camping</button>
+                    <button class = 'sleepChoice' id="hotel">Sleep in a Bed</button>
                 </div>
             </div>
            </section>
         <!-- Suggestions from API - depending on camping/lodging choice as well as a restaurant-->
         <section class="page page3">
-            <div class="container suggestions" id="suggestion1">
-                <h2 class="name" id="name1"></h2>
-                <p class="address" id="address1"></p>
-                <p class="website" id="website1"></p>
-                <a class="phone" id="phone1"></a>
-            </div>
-            <div class="container suggestions" id="suggestion2">
-                <h2 class="name" id="name2"></h2>
-                <p class="address" id="address2"></p>
-                <p class="website" id="website2"></p>
-                <a class="phone" id="phone2"></a>
-            </div>
-            <div class="container suggestions" id="suggestion3">
-                <h2 class="name" id="name3"></h2>
-                <p class="address" id="address3"></p>
-                <p class="website" id="website3"></p>
-                <a class="phone" id="phone3"></a>
-            </div>
-            <div class="container suggestions" id="suggestion4">
-                <h2 class="name" id="name4"></h2>
-                <p class="address" id="address4"></p>
-                <p class="website" id="website4"></p>
-                <a class="phone" id="phone4"></a>
+            <h1 id="title">Take Off</h1>
+            <div class="suggestionContainer">
+                <div class="container suggestions" id="suggestion1">
+                    <h2 class="name" id="name1"></h2>
+                    <p class="address" id="address1"></p>
+                    <a class="website" id="website1" href="#"></a>
+                    <p class="phone" id="phone1"></p>
+                </div>
+                <div class="container suggestions" id="suggestion2">
+                    <h2 class="name" id="name2"></h2>
+                    <p class="address" id="address2"></p>
+                    <a class="website" id="website2" href="#"></a>
+                    <p class="phone" id="phone2"></p>
+                </div>
+                <div class="container suggestions" id="suggestion3">
+                    <h2 class="name" id="name3"></h2>
+                    <p class="address" id="address3"></p>
+                    <a class="website" id="website3" href="#"></a>
+                    <p class="phone" id="phone3"></p>
+                </div>
+                <div class="container suggestions" id="suggestion4">
+                    <h2 class="name" id="name4"></h2>
+                    <p class="address" id="address4"></p>
+                    <a class="website" id="website4" href="#"></a>
+                    <p class="phone" id="phone4"></p>
+                </div>
             </div>
         </section>
 
-        <section class="page page4">
+        <!-- <section class="page page4">
             <div class="container">
 
-            </div>
+            </div> -->
         </section>
     </main>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
