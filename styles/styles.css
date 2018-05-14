@@ -132,6 +132,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+/* ====================================
+GLOBAL STYLES
+==================================== */
 html {
   font-size: 62.5%; }
 
@@ -233,6 +236,9 @@ button {
   letter-spacing: 0.075rem;
   border-radius: 2px; }
 
+/* ====================================
+PAGE 1 - ASK USER TO CHOOSE A CITY
+==================================== */
 .cityForm {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -250,6 +256,9 @@ button {
 button#tobermory, button#hotel {
   margin-right: 0; }
 
+/* ====================================
+PAGE 2 - ASK USER HOTEL / CAMPING?
+==================================== */
 .page2 .choiceContainer {
   widows: 90%;
   display: -webkit-box;
@@ -265,6 +274,9 @@ button#tobermory, button#hotel {
   -ms-flex-line-pack: center;
   align-content: center; }
 
+/* ====================================
+PAGE 3 - DISPLAY SUGGESTED VENUES
+==================================== */
 section.page3 {
   -webkit-box-flex: column;
   -ms-flex: column nowrap;
@@ -312,10 +324,9 @@ section.page3 {
         text-decoration: none;
         word-wrap: break-word; }
 
-.suggestions:hover {
-  background: rgba(255, 255, 255, 0.4);
-  color: black; }
-
+/* ====================================
+MEDIA QUERIES - DESKTOP LAYOUT UPDATES
+==================================== */
 @media (max-width: 1920px) {
   .page3 div.suggestionContainer {
     -webkit-box-orient: vertical;
@@ -355,7 +366,21 @@ section.page3 {
         font-size: 1vw;
         margin: 5px; } }
 
+@media (max-width: 1000px) {
+  .page1 .cityForm {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap; }
+    .page1 .cityForm button {
+      min-width: 30%;
+      margin: 0 20px 20px 20px; }
+  .page1 h2, .page2 h2 {
+    padding: 20px 20px 10px 30px; } }
+
 @media (max-width: 890px) {
+  .sleepChoice {
+    min-width: 30%; }
   .page3 {
     height: 90vh; }
     .page3 div.suggestionContainer div.suggestions {
@@ -369,15 +394,73 @@ section.page3 {
         font-size: 1.2rem;
         margin: 5px; } }
 
+@media (max-width: 836px) {
+  .page1 button {
+    min-height: 7.6vh; } }
+
 @media (max-width: 780px) {
+  main {
+    background-attachment: fixed; }
   h1 {
     margin-bottom: 5vh; }
   .page3 div.suggestionContainer div.container.suggestions {
-    max-height: 45%;
-    -ms-flex-preferred-size: 200px;
-    flex-basis: 200px;
     margin: 0 2vw 2vw 0; }
     .page3 div.suggestionContainer div.container.suggestions h2 {
       font-size: 1.25vw; }
     .page3 div.suggestionContainer div.container.suggestions p {
       font-size: 1vw; } }
+
+/* ====================================
+MEDIA QUERIES - TABLET LAYOUT UPDATES
+==================================== */
+@media (max-width: 700px) {
+  button {
+    width: 70%; }
+  .page1 button,
+  .page2 button {
+    font-size: 2vh; }
+  button#tobermory {
+    margin-right: 20px; }
+  button#camping, button#hotel {
+    margin: 10px 20px; }
+  .page1 div.container,
+  .page2 div.container {
+    height: 80%;
+    width: 90%; }
+  .page2 .choiceContainer {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .page1 h2, .page2 h2 {
+    font-size: 3rem;
+    line-height: 4.15rem; }
+  .page3 h1 {
+    display: none; }
+  .page3 div.suggestionContainer div.container.suggestions {
+    -ms-flex-preferred-size: 90%;
+    flex-basis: 90%;
+    max-height: 25%; }
+    .page3 div.suggestionContainer div.container.suggestions h2 {
+      font-size: 2.5vw; }
+    .page3 div.suggestionContainer div.container.suggestions p {
+      font-size: 2vw; }
+    .page3 div.suggestionContainer div.container.suggestions a {
+      font-size: 1.8vw; } }
+
+/* ====================================
+MEDIA QUERIES - MOBILE LAYOUT UPDATES
+==================================== */
+@media (max-width: 550px) {
+  .page3 div.suggestionContainer div.container.suggestions {
+    padding: 15px; }
+    .page3 div.suggestionContainer div.container.suggestions h2 {
+      font-size: 3vw; }
+    .page3 div.suggestionContainer div.container.suggestions p {
+      font-size: 2.6vw; }
+    .page3 div.suggestionContainer div.container.suggestions a {
+      font-size: 2.4vw; } }
+
+@media (max-width: 400px) {
+  .page1 div.container,
+  .page2 div.container {
+    height: 86%;
+    width: 100%; } }
