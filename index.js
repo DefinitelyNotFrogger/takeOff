@@ -13,11 +13,9 @@ console.log(app.locationResults);
 // console.log(app.locationResults);
 // We can design the restaurant results to work exactly like the location results
 // app.restaurants = [];
+
 app.init = function () {
     app.events();
-    // app.getLodgingID();
-    // app.getCampgroundID();
-    // app.getRestaurantID();
 };
 
 $(function(){
@@ -136,10 +134,12 @@ app.displayResults = function () {
         const locationWebsite = location.website;
         const locationPhone = location.international_phone_number;
         
+        if (locationWebsite !== undefined) {
+            $(`#website${index + 1}`).text(`${locationWebsite}`);
+        } 
         // This creates the text inside the elements in the index.html to display our results for the user
         $(`#name${index + 1}`).text(`${locationName}`);
         $(`#address${index + 1}`).text(`${locationAddress}`);
-        $(`#website${index + 1}`).text(`${locationWebsite}`);
         $(`#phone${index + 1}`).text(`${locationPhone}`);
     }) 
 };

@@ -2,21 +2,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-    // font-family: 'Carter One', cursive;
-
-    // font-family: 'Lalezar', cursive;
-
-    // font-family: 'Fredericka the Great', cursive;
-
-    // font-family: 'Vast Shadow', cursive;
-
-    // font-family: 'Bungee Shade', cursive;
-
-    // font-family: 'Lobster', cursive;
-
-    // font-family: 'Lobster Two', cursive;
-
-    // font-family: 'Bungee Inline', cursive;
+html {
+    font-size: 62.5%;
+}
 
 main {
     background-image: url(../images/aaron-burden-133359-adirondakchairs.jpg);
@@ -28,19 +16,25 @@ main {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 section {
     margin: 0 auto;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+    flex-flow: column nowrap;
+    justify-content: center;
     // align-items: center;
     align-content: center;
-    height: 60vh;
+    align-items: center;
+    height: 70vh;
+    width: 90vw;
     color: rgba($color: #000000, $alpha: 0.4);
+
+    h1 {
+        text-align: center;
+    }
 }
 
 
@@ -48,45 +42,66 @@ section {
 .container {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    // width: 100%;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 50vw;
+    height: 50%;
     padding-bottom: 25px;
-    border: 1px solid white;
+    margin-bottom: 0px;
+    border: 2px solid white;
+    text-align: center;
+    background-color: rgba($color: #FEFEFE, $alpha: 0.9);
+    border-radius: 20px;
 }
 
 .page:not(.page1) {
     display: none;
+}    
+
+h1 {
+    color: #FFD43A;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 9rem;
+    // text-shadow: -2px 2px white;
+    text-shadow: -4px 4px #A3936E;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #5c5c52;
+    font-size: 2rem;
+    text-shadow: -1px 1px #FEFEFE;
+    line-height: 2.15rem;
+
+}
+
+h2, p, a, button {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+button {
+    margin-right: 40px;
+    width: 20%;
+    background-color: #668EB3;
+    border: none;
+    padding: 15px;
+    color: #FEFEFE;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.075rem;
+    border-radius: 2px;
 }
 
 .cityForm {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
 }
 
-h1 {
-    color: #B5936C;
-    text-shadow:2px 2px whitesmoke;
-}
-
-button, .sleepChoice {
-    background-color: rgba(240,237,238, 0.25);
-    border: 2px solid gray;
-    padding: 0 10px;
-    margin: 0;
-    width: 30%;
-}
-
-h2 {
-    color: #63B4D1;
-    text-shadow: 1px 1px white;
-}
-
-p, a {
-    color: whitesmoke;
-    text-shadow: 1px 1px #181f35;
+button#tobermory, button#hotel {
+    margin-right: 0; 
 }
 
 .page2 {    
@@ -94,41 +109,56 @@ p, a {
         widows: 90%;
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-between;
+        justify-content: center;
         align-content: center;
-        h2 {
-            border-bottom: 2px dashed lightcoral;
-        }
-        
-        button {
-            width: 80%;
-            display: block;
-        }
     }
 }
 
-.page3 { 
+section.page3 { 
 
-    flex: row wrap;
-    .suggestions {
-        padding: 25px;
-        width: calc(25% - 25px);
-        background: rgba($color: #FFF, $alpha: 0.25);
-        flex-basis: 350px;
+    flex: column nowrap;
+    
+    h1 {
+        width: 100%;
+    }
 
-        h2 {
-            color: whitesmoke;
-            text-shadow: 1px 1px #181f35;  
-        }
+    div.suggestionContainer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center; 
+        min-height: 60%;
+    
+        .suggestions {
+            // min-height: 60%; 
+            padding: 25px;
+            margin-right: 50px;
+            width: calc(25% - 50px);
+            max-height: 100%;
+            justify-content: center;
+            align-items: center;
+            // background: rgba($color: #FFF, $alpha: 0.25);
+            flex-basis: 350px;
+            background-color: rgba($color: #FEFEFE, $alpha: 0.9);
 
-        p, h2, a {
-            text-align: center;
-            width: 80%;
-            color: black;
-        }
+            p, h2, a {
+                text-align: center;
+                width: 80%;
+            }
 
-        a {
-            text-decoration: none;
+            h2 {
+                border-bottom: 2px solid #A3936E;
+            }
+            
+            p, a {
+                font-weight: bold;
+                color: #939383;
+            }
+
+            a {
+                text-decoration: none;
+                word-wrap: break-word;
+            }
         }
     }
 }
@@ -136,11 +166,113 @@ p, a {
 .suggestions:hover {
     background: rgba($color: #FFF, $alpha: 0.4);
     color: black;
-    text-shadow: 1px 1px darkblue;
 
     h2, p, a {
-        color: black;
-        text-shadow: whitesmoke;
+
     }
 
+}
+
+@media (max-width: 1920px) {
+    .page3 {
+
+        div.suggestionContainer {
+            flex-flow: column wrap;
+            justify-content: space-between;
+            align-items: space-around;
+            
+            div.suggestions {
+            flex-basis: 550px;
+            margin: 0 25px 25px 25px;
+
+                h2 {
+                    font-size: 2.75rem;
+                    line-height: 2.8rem;
+                }
+
+                p {
+                font-size: 1.5rem; 
+                }
+            }
+        } 
+    }
+}
+
+@media (max-width: 1350px) {
+    .page3 {
+
+        div.suggestionContainer {
+            flex-flow: row wrap;
+            
+            div.suggestions {
+            flex-basis: 350px;
+            margin: 0 25px 25px 25px;
+
+                h2 {
+                    font-size: 1.25vw;
+                    line-height: 2.8rem;
+                }
+
+                p {
+                font-size: 1vw; 
+                    margin: 5px;
+                
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    // THIS IS FOR PAGE 1, look: tobermory
+}
+
+@media (max-width: 890px) {
+.page3 {
+    height: 90vh;
+
+        div.suggestionContainer {
+            
+            div.suggestions {
+            flex-basis: 300px;
+            margin: 0 25px 25px 25px;
+
+                h2 {
+                    font-size: 1.5rem;
+                    line-height: 2.8rem;
+                }
+
+                p {
+                font-size: 1.2rem; 
+                    margin: 5px;               
+                }
+            }
+        }   
+    }
+}   
+
+@media (max-width: 780px) {
+    h1 {
+        margin-bottom: 5vh;
+    
+    }
+    .page3 {
+        
+        div.suggestionContainer {
+        
+            div.container.suggestions {
+                max-height: 45%;
+                flex-basis: 200px;
+                margin: 0 2vw 2vw 0;
+                
+                h2 {
+                    font-size: 1.25vw;
+                }
+
+                p {
+                    font-size: 1vw;
+                }
+            }
+        }
+    }
 }

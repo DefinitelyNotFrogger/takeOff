@@ -132,6 +132,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+html {
+  font-size: 62.5%; }
+
 main {
   background-image: url(../images/aaron-burden-133359-adirondakchairs.jpg);
   background-position: cover;
@@ -147,31 +150,14 @@ main {
   -webkit-box-direction: normal;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
 
 section {
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  height: 60vh;
-  color: rgba(0, 0, 0, 0.4); }
-
-.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,14 +168,70 @@ section {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  height: 70vh;
+  width: 90vw;
+  color: rgba(0, 0, 0, 0.4); }
+  section h1 {
+    text-align: center; }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  width: 50vw;
+  height: 50%;
   padding-bottom: 25px;
-  border: 1px solid white; }
+  margin-bottom: 0px;
+  border: 2px solid white;
+  text-align: center;
+  background-color: rgba(254, 254, 254, 0.9);
+  border-radius: 20px; }
 
 .page:not(.page1) {
   display: none; }
+
+h1 {
+  color: #FFD43A;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 9rem;
+  text-shadow: -4px 4px #A3936E;
+  margin-top: 0;
+  margin-bottom: 50px; }
+
+h2 {
+  color: #5c5c52;
+  font-size: 2rem;
+  text-shadow: -1px 1px #FEFEFE;
+  line-height: 2.15rem; }
+
+h2, p, a, button {
+  font-family: 'Nunito Sans', sans-serif; }
+
+button {
+  margin-right: 40px;
+  width: 20%;
+  background-color: #668EB3;
+  border: none;
+  padding: 15px;
+  color: #FEFEFE;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.075rem;
+  border-radius: 2px; }
 
 .cityForm {
   display: -webkit-box;
@@ -199,30 +241,14 @@ section {
   -webkit-box-direction: normal;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-line-pack: center;
   align-content: center; }
 
-h1 {
-  color: #B5936C;
-  text-shadow: 2px 2px whitesmoke; }
-
-button, .sleepChoice {
-  background-color: rgba(240, 237, 238, 0.25);
-  border: 2px solid gray;
-  padding: 0 10px;
-  margin: 0;
-  width: 30%; }
-
-h2 {
-  color: #63B4D1;
-  text-shadow: 1px 1px white; }
-
-p, a {
-  color: whitesmoke;
-  text-shadow: 1px 1px #181f35; }
+button#tobermory, button#hotel {
+  margin-right: 0; }
 
 .page2 .choiceContainer {
   widows: 90%;
@@ -233,41 +259,125 @@ p, a {
   -webkit-box-direction: normal;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-line-pack: center;
   align-content: center; }
-  .page2 .choiceContainer h2 {
-    border-bottom: 2px dashed lightcoral; }
-  .page2 .choiceContainer button {
-    width: 80%;
-    display: block; }
 
-.page3 {
-  -webkit-box-flex: row;
-  -ms-flex: row wrap;
-  flex: row wrap; }
-  .page3 .suggestions {
-    padding: 25px;
-    width: calc(25% - 25px);
-    background: rgba(255, 255, 255, 0.25);
-    -ms-flex-preferred-size: 350px;
-    flex-basis: 350px; }
-    .page3 .suggestions h2 {
-      color: whitesmoke;
-      text-shadow: 1px 1px #181f35; }
-    .page3 .suggestions p, .page3 .suggestions h2, .page3 .suggestions a {
-      text-align: center;
-      width: 80%;
-      color: black; }
-    .page3 .suggestions a {
-      text-decoration: none; }
+section.page3 {
+  -webkit-box-flex: column;
+  -ms-flex: column nowrap;
+  flex: column nowrap; }
+  section.page3 h1 {
+    width: 100%; }
+  section.page3 div.suggestionContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 60%; }
+    section.page3 div.suggestionContainer .suggestions {
+      padding: 25px;
+      margin-right: 50px;
+      width: calc(25% - 50px);
+      max-height: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-preferred-size: 350px;
+      flex-basis: 350px;
+      background-color: rgba(254, 254, 254, 0.9); }
+      section.page3 div.suggestionContainer .suggestions p, section.page3 div.suggestionContainer .suggestions h2, section.page3 div.suggestionContainer .suggestions a {
+        text-align: center;
+        width: 80%; }
+      section.page3 div.suggestionContainer .suggestions h2 {
+        border-bottom: 2px solid #A3936E; }
+      section.page3 div.suggestionContainer .suggestions p, section.page3 div.suggestionContainer .suggestions a {
+        font-weight: bold;
+        color: #939383; }
+      section.page3 div.suggestionContainer .suggestions a {
+        text-decoration: none;
+        word-wrap: break-word; }
 
 .suggestions:hover {
   background: rgba(255, 255, 255, 0.4);
-  color: black;
-  text-shadow: 1px 1px darkblue; }
-  .suggestions:hover h2, .suggestions:hover p, .suggestions:hover a {
-    color: black;
-    text-shadow: whitesmoke; }
+  color: black; }
+
+@media (max-width: 1920px) {
+  .page3 div.suggestionContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: space-around;
+    -ms-flex-align: space-around;
+    align-items: space-around; }
+    .page3 div.suggestionContainer div.suggestions {
+      -ms-flex-preferred-size: 550px;
+      flex-basis: 550px;
+      margin: 0 25px 25px 25px; }
+      .page3 div.suggestionContainer div.suggestions h2 {
+        font-size: 2.75rem;
+        line-height: 2.8rem; }
+      .page3 div.suggestionContainer div.suggestions p {
+        font-size: 1.5rem; } }
+
+@media (max-width: 1350px) {
+  .page3 div.suggestionContainer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap; }
+    .page3 div.suggestionContainer div.suggestions {
+      -ms-flex-preferred-size: 350px;
+      flex-basis: 350px;
+      margin: 0 25px 25px 25px; }
+      .page3 div.suggestionContainer div.suggestions h2 {
+        font-size: 1.25vw;
+        line-height: 2.8rem; }
+      .page3 div.suggestionContainer div.suggestions p {
+        font-size: 1vw;
+        margin: 5px; } }
+
+@media (max-width: 890px) {
+  .page3 {
+    height: 90vh; }
+    .page3 div.suggestionContainer div.suggestions {
+      -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
+      margin: 0 25px 25px 25px; }
+      .page3 div.suggestionContainer div.suggestions h2 {
+        font-size: 1.5rem;
+        line-height: 2.8rem; }
+      .page3 div.suggestionContainer div.suggestions p {
+        font-size: 1.2rem;
+        margin: 5px; } }
+
+@media (max-width: 780px) {
+  h1 {
+    margin-bottom: 5vh; }
+  .page3 div.suggestionContainer div.container.suggestions {
+    max-height: 45%;
+    -ms-flex-preferred-size: 200px;
+    flex-basis: 200px;
+    margin: 0 2vw 2vw 0; }
+    .page3 div.suggestionContainer div.container.suggestions h2 {
+      font-size: 1.25vw; }
+    .page3 div.suggestionContainer div.container.suggestions p {
+      font-size: 1vw; } }
