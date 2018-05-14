@@ -62,7 +62,7 @@ app.events = function () {
         app.getCampgroundID(latLon);
         app.getRestaurantID(latLon);
         // console.log(latLon);
-        $('main').css("background-image", "url(../images/wasaga.jpg)")
+        $('main').css("background-image", "url(./images/Wasaga.jpg)")
         $('.page1').fadeOut('slow', function (){
             $('.page2').fadeIn('slow', function (){
             });
@@ -75,7 +75,7 @@ app.events = function () {
         app.getLodgingID(latLon);
         app.getCampgroundID(latLon);
         app.getRestaurantID(latLon);
-        $('main').css("background-image", "url(../images/sauble.jpg)")
+        $('main').css("background-image", "url(./images/Sauble.jpg)")
         $('.page1').fadeOut('slow', function () {
             $('.page2').fadeIn('slow', function () {
             });
@@ -88,7 +88,7 @@ app.events = function () {
         app.getLodgingID(latLon);
         app.getCampgroundID(latLon);
         app.getRestaurantID(latLon);
-        $('main').css("background-image", "url(../images/tobermory.jpg)")
+        $('main').css("background-image", "url(./images/tobermory.jpg)")
         $('.page1').fadeOut('slow', function () {
             $('.page2').fadeIn('slow', function () {
 
